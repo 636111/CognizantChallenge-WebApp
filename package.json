@@ -1,0 +1,17 @@
+{
+	"name": "cognizantchallenge-webapp",
+	"version": "0.0.1",
+	"description": "Web App for showing Cognizant Challenge results in NSSpain 2017",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"angular": "^1.6.6",
+		"express": "^4.15.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://code.cognizant.com/636111/CognizantChallenge-WebApp"
+	}
+}
