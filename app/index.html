@@ -7,9 +7,16 @@
   </head>
   <body>
     <div ng-controller="mainCtrl">
-      <div ng-repeat="contestant in ranking">
-          <span>Nick: {{ contestant.nick }}</span>
-          <span>Score: {{ contestant.score }}</span>          
+      <p>Top 10</p>        
+      <div ng-repeat="contestant in top10">
+        <span>Nick: {{ contestant.nick }}</span>
+        <span>Score: {{ contestant.score }}</span>          
+      </div>
+      <br>
+      <p>Rest</p>
+      <div ng-repeat="contestant in rest">
+        <span>Nick: {{ contestant.nick }}</span>
+        <span>Score: {{ contestant.score }}</span>          
       </div>
     </div>
     </div>

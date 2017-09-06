@@ -6,19 +6,26 @@ angular
     
     $scope.status;
     $scope.ranking;
+    $scope.top10;
+    $scope.rest;
 
     (function getRanking() {
       rankingService.getRanking()
         .then(function(response) {
           response = testData; //test
           $scope.ranking = response.data;
-          //console.log(JSON.stringify($scope.ranking));
+          getTop10();
         }, function(error) {
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      $timeout(getRanking, 10000);
+      //$timeout(getRanking, 10000);
     }());
+
+    function getTop10() {
+      $scope.top10 = $scope.ranking.slice(0,10);
+      $scope.rest = $scope.ranking.slice(10,$scope.ranking.lenght);
+    };
 
     var testData = {
       data: [
