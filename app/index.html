@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" href="/app/main.css">
   </head>
   <body>
-    <div ng-controller="mainCtrl">Hello NSSSpain 2017</div>
+    <div ng-controller="mainCtrl">
+      <div ng-repeat="contestant in ranking">
+          <span>Nick: {{ contestant.nick }}</span>
+          <span>Score: {{ contestant.score }}</span>          
+      </div>
+    </div>
     </div>
     <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="/app/main.js"></script>
