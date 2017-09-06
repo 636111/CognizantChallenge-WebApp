@@ -2,7 +2,7 @@
 
 angular
   .module('app', [])
-  .controller('mainCtrl', ['$scope', 'rankingService', function($scope, rankingService) {
+  .controller('mainCtrl', ['$scope', 'rankingService', '$timeout', function($scope, rankingService, $timeout) {
     
     $scope.status;
     $scope.ranking;
@@ -17,7 +17,7 @@ angular
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      setTimeout(getRanking, 10000);
+      $timeout(getRanking, 10000);
     }());
 
     var testData = {
