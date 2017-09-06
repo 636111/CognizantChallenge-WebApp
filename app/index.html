@@ -6,17 +6,17 @@
     <link rel="stylesheet" type="text/css" href="/app/main.css">
   </head>
   <body>
-    <div ng-controller="mainCtrl">
+    <div class="ranking" ng-controller="mainCtrl">
       <p>Top 10</p>        
       <div ng-repeat="contestant in top10">
-        <span>Nick: {{ contestant.nick }}</span>
-        <span>Score: {{ contestant.score }}</span>          
+        <span>{{ contestant.nick }}</span>
+        <span>{{ contestant.score }}</span>          
       </div>
       <br>
       <p>Rest</p>
       <div ng-repeat="contestant in rest">
-        <span>Nick: {{ contestant.nick }}</span>
-        <span>Score: {{ contestant.score }}</span>          
+        <span>{{ contestant.nick }}</span>
+        <span>{{ contestant.score }}</span>          
       </div>
     </div>
     </div>

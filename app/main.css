@@ -1,0 +1,25 @@
+html { 
+  background: url(images/background1.jpg) no-repeat center center fixed;
+  background-size: auto 100%;
+  /*
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  */
+}
+
+div.ranking {
+  position: absolute;
+  top: 55%;
+  left: 67%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 15%;
+  color: white;
+  /*background-color: rgb(58,93,223);*/
+  padding: 30px;
+}
