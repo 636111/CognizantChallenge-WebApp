@@ -1,12 +1,6 @@
 html {
-  background: url(images/background.jpg) no-repeat center center fixed;
+  background: url(images/background.png) no-repeat center center fixed;
   background-size: auto 100%;
-  /*
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  */
 }
 
 div.ranking {
