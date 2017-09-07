@@ -44,13 +44,29 @@ div.ranking .container .contestant {
   -webkit-border-radius: 4px 4px 4px 4px;
 }
 
-div.ranking .container .contestant.winners:first-child{
-  margin-bottom: 4%;
+div.ranking .container .winners .contestant:first-child {
   background-color: rgb(35, 213, 125);
+}
+
+div.ranking .container .winners .contestant:first-child,
+div.ranking .container .winners .contestant:last-child {
+  margin-bottom: 4%;
 }
 
 div.ranking .container .contestant span:last-child {
   float: right;
+}
+
+.contestant {
+  opacity: 1;
+}
+.contestant.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+.contestant.ng-enter-active {
+  opacity: 1;
 }
 
 /*

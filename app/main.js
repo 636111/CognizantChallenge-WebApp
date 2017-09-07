@@ -1,16 +1,16 @@
 'use strict';
 
 angular
-  .module('app', [])
+  .module('app', ['ngAnimate'])
   .controller('mainCtrl', ['$scope', 'rankingService', '$timeout', function($scope, rankingService, $timeout) {
     
     $scope.status;
     $scope.ranking;
     $scope.top;
-    $scope.rest;
-    $scope.restNum = 0;
     $scope.arrayRest = [];
-
+    $scope.restSlide = 0;
+    $scope.rest;
+    
     (function getRanking() {
       rankingService.getRanking()
         .then(function(response) {
@@ -25,23 +25,25 @@ angular
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      //$timeout(getRanking, 10000);
+      $timeout(getRanking, 10000);
     }());
 
     function getTop() {
-      var size = 3;
-      $scope.top = $scope.ranking.slice(0,size);
-      $scope.rest = $scope.ranking.slice(size,$scope.ranking.lenght);
+      var top = 3;
+      $scope.top = $scope.ranking.slice(0,top);
+
+      var size = 10-top;
+      var restNum = 0;
+      for (var i=0; i<$scope.ranking.slice(top,$scope.ranking.lenght).length; i++) {
+        $scope.arrayRest[restNum] = $scope.ranking.slice(top,$scope.ranking.lenght).slice(i,i+size);
+        restNum++;
+        i+=size;
+      }
     };
 
     function updateRestView() {
-      var size = 10;
-      for (var i=0; i<$scope.rest.length; i++) {
-        $scope.arrayRest[$scope.restNum] = $scope.rest.slice(i,i+size);
-        $scope.restNum++;
-        i+=size;
-      }
-      //console.log($scope.arrayRest);
+      $scope.rest = $scope.arrayRest[$scope.restSlide];
+      $scope.restSlide = $scope.restSlide + 1 < $scope.arrayRest.length ? $scope.restSlide + 1 : 0;
     };
 
     function getGetOrdinal(n) {
