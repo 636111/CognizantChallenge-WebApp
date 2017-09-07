@@ -111,6 +111,10 @@ html {
   background-size: cover;
 }
 
+body img {
+  margin: 3%;
+}
+
 div.ranking {
   position: absolute;
   width: 34%;
@@ -138,7 +142,7 @@ div.ranking .container p {
 
 div.ranking .container .contestant {
   margin: 1.5% 5%;
-  padding: 1% 5%;
+  padding: 1% 2%;
   font-size: 24px;
   background-color: rgb(38, 182, 235);
   border-radius: 4px 4px 4px 4px;
@@ -148,6 +152,14 @@ div.ranking .container .contestant {
 
 div.ranking .container .winners .contestant:first-child {
   background-color: rgb(35, 213, 125);
+}
+
+div.ranking .container .winners .contestant {
+  background-color: rgb(23, 200, 158);  
+}
+
+div.ranking .container .winners .contestant:last-child {
+  background-color: rgb(14, 188, 189);  
 }
 
 div.ranking .container .contestant span:last-child {
@@ -160,14 +172,14 @@ div.ranking .container img {
   padding: 1%;
 }
 
-.contestant {
+.rest .contestant {
   opacity: 1;
 }
-.contestant.ng-enter {
+.rest .contestant.ng-enter {
   -webkit-transition: 1s;
   transition: 1s;
   opacity: 0;
 }
-.contestant.ng-enter-active {
+.rest .contestant.ng-enter-active {
   opacity: 1;
 }
