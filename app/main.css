@@ -1,6 +1,114 @@
+/* font definition */
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTH____.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTHI___.ttf);
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTTH___.ttf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTTHI__.ttf);
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTELT__.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTELTI_.ttf);
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTLT___.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTLTI__.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTR____.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTRI___.ttf);
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTBD___.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTBDI__.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTBL___.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTBLI__.ttf);
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTUBL__.ttf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Insterstate';
+  src: url(fonts/INTUBLI_.ttf);
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* styles */
 html {
+  font-family: 'Insterstate';
   background: url(images/background.png) no-repeat center center fixed;
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 div.ranking {
@@ -8,12 +116,12 @@ div.ranking {
   width: 34%;
   height: 78%;
   top: 7%;
-  right: 8%;
+  right: 0;
   background-color: white;
 }
 
 div.ranking .container {
-  height: 100%;
+  height: 99%;
   margin-top: 10%;
   margin-left: 10%;
   color: white;
@@ -25,13 +133,13 @@ div.ranking .container p {
   padding: 5%;
   margin-bottom: 3%;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 div.ranking .container .contestant {
-  margin: 2% 5%;
+  margin: 1.5% 5%;
   padding: 1% 5%;
-  font-size: 23px;  
+  font-size: 24px;
   background-color: rgb(38, 182, 235);
   border-radius: 4px 4px 4px 4px;
   -moz-border-radius: 4px 4px 4px 4px;
@@ -42,13 +150,14 @@ div.ranking .container .winners .contestant:first-child {
   background-color: rgb(35, 213, 125);
 }
 
-div.ranking .container .winners .contestant:first-child,
-div.ranking .container .winners .contestant:last-child {
-  margin-bottom: 4%;
-}
-
 div.ranking .container .contestant span:last-child {
   float: right;
+}
+
+div.ranking .container img {
+  display: block;
+  margin: auto;
+  padding: 1%;
 }
 
 .contestant {
@@ -62,34 +171,3 @@ div.ranking .container .contestant span:last-child {
 .contestant.ng-enter-active {
   opacity: 1;
 }
-
-/*
-body {
-  margin: 0;
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-.container .slide {
-      z-index: 1;
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      height: 100%;
-      transition: opacity 1s ease-in-out;
-
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-
-      opacity: 0;
-}
-.container .slide.show {
-          opacity: 1;
-}
-
-*/
