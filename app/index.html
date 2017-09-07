@@ -7,18 +7,22 @@
   </head>
   <body>
     <div class="ranking" ng-controller="mainCtrl">
-      <p>Top 10</p>        
-      <div ng-repeat="contestant in top10">
-        <span>{{ contestant.nick }}</span>
-        <span>{{ contestant.score }}</span>          
+      <div class="container">
+        <p>Ranking</p>
+        <div>
+          <div class="contestant winners" ng-repeat="contestant in top">
+            <span>{{ contestant.nick }}</span>
+            <span>{{ contestant.position }}</span>
+          </div>
+        </div>
+        <br>
+        <div ng-repeat="rest in arrayRest">
+          <div class="contestant" class="rest" ng-repeat="contestant in rest">
+            <span>{{ contestant.nick }}</span>
+            <span>{{ contestant.position }}</span>
+          </div>
+        </div>
       </div>
-      <br>
-      <p>Rest</p>
-      <div ng-repeat="contestant in rest">
-        <span>{{ contestant.nick }}</span>
-        <span>{{ contestant.score }}</span>          
-      </div>
-    </div>
     </div>
     <script type="text/javascript" src="/node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="/app/main.js"></script>

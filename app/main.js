@@ -6,15 +6,21 @@ angular
     
     $scope.status;
     $scope.ranking;
-    $scope.top10;
+    $scope.top;
     $scope.rest;
+    $scope.restNum = 0;
+    $scope.arrayRest = [];
 
     (function getRanking() {
       rankingService.getRanking()
         .then(function(response) {
           response = testData; //test
           $scope.ranking = response.data;
-          getTop10();
+          for (var i=0; i<$scope.ranking.length; i++) {
+            $scope.ranking[i].position = getGetOrdinal(i+1);
+          }
+          getTop();
+          updateRestView();
         }, function(error) {
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
@@ -22,9 +28,26 @@ angular
       //$timeout(getRanking, 10000);
     }());
 
-    function getTop10() {
-      $scope.top10 = $scope.ranking.slice(0,10);
-      $scope.rest = $scope.ranking.slice(10,$scope.ranking.lenght);
+    function getTop() {
+      var size = 3;
+      $scope.top = $scope.ranking.slice(0,size);
+      $scope.rest = $scope.ranking.slice(size,$scope.ranking.lenght);
+    };
+
+    function updateRestView() {
+      var size = 10;
+      for (var i=0; i<$scope.rest.length; i++) {
+        $scope.arrayRest[$scope.restNum] = $scope.rest.slice(i,i+size);
+        $scope.restNum++;
+        i+=size;
+      }
+      //console.log($scope.arrayRest);
+    };
+
+    function getGetOrdinal(n) {
+      var s=["th","st","nd","rd"],
+          v=n%100;
+      return n+(s[(v-20)%10]||s[v]||s[0]);
     };
 
     var testData = {
