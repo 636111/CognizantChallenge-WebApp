@@ -30,7 +30,8 @@ angular
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      $timeout(getRanking, 10000);
+      $timeout(getRanking, 5000);
+      //$timeout(getRanking, 10000);
     }());
 
     function getTop() {
@@ -204,11 +205,13 @@ angular
   }])
   .factory('rankingService', ['$http', function($http) {
     
-    var urlBase = "https://cognizantchallenge.herokuapp.com/score",
-        rankingData = {};
+    var urlBase = "http://cognizantchallenge.herokuapp.com/score",
+        rankingData = {},
+        token = "Token: LAv49uXbmOoCUm162SQxHJI3Il0jHCqmmA31I40RZIw==";
+
+    $http.defaults.headers.common['Authorization'] = token;
 
     rankingData.getRanking = function(){
-      console.log("call to API");
       return $http.get(urlBase);
     };
 

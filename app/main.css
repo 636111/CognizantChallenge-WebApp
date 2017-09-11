@@ -111,12 +111,26 @@ html {
   background-size: cover;
 }
 
-body img {
+.logo {
   margin: 3%;
 }
 
-/* clouds */
+.challenge {
+  width: 7%;
+  position: absolute;
+  left: 17%;
+  top: 15%;
+}
 
+div.ranking {
+  width: 34%;
+}
+
+div.animated-content {
+  width: 66%;
+}
+
+/* clouds */
 body {
 	overflow: hidden; /* to hide the horizontal scroller appearing during the animation */
 }
@@ -196,19 +210,6 @@ body {
 	100% {margin-left: -1000px;}
 }
 
-/* pages animation */
-.slide-1 {
-  opacity: 1;
-}
-.slide-1.ng-enter {
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 0;
-}
-.slide-1.ng-enter-active {
-  opacity: 1;
-}
-
 /* texts */
 .text h1 {
   font-size: 55px;
@@ -229,6 +230,114 @@ body {
   color: white;
 }
 
+.ballon_text {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.ballon_text span {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.slide-1 .ballon_text {
+  position: absolute;
+  top: 60.5%;
+  left: 11.5%;
+  width: 25%;
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0,1.0);
+}
+.slide-1 .ballon_text.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: 27%;
+  transition-delay: 1.5s;
+
+  -webkit-transform: scale(0.0, 1.0);
+  -moz-transform: scale(0.0, 1.0);
+  -ms-transform: scale(0.0, 1.0);
+  -o-transform: scale(0.0, 1.0);
+  transform: scale(0.0,1.0);
+}
+.slide-1 .ballon_text.ng-enter-active {
+  left: 11.5%;
+  
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0,1.0);
+}
+.slide-1 .ballon_text.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: 11.5%;  
+
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0,1.0);
+}
+.slide-1 .ballon_text.ng-leave-active {
+  left: 27%;
+
+  -webkit-transform: scale(0.0, 1.0);
+  -moz-transform: scale(0.0, 1.0);
+  -ms-transform: scale(0.0, 1.0);
+  -o-transform: scale(0.0, 1.0);
+  transform: scale(0.0,1.0);
+}
+
+.slide-2 .ballon_text {
+  position: absolute;
+  top: 31%;
+  left: 30%;
+  transition-delay: 1.5s;
+
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0,1.0);
+}
+.slide-2 .ballon_text.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(0.0, 1.0);
+  -moz-transform: scale(0.0, 1.0);
+  -ms-transform: scale(0.0, 1.0);
+  -o-transform: scale(0.0, 1.0);
+  transform: scale(0.0,1.0);
+}
+.slide-2 .ballon_text.ng-enter-active {
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0,1.0);
+}
+.slide-2 .ballon_text.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0,1.0);
+}
+.slide-2 .ballon_text.ng-leave-active {
+  -webkit-transform: scale(0.0, 1.0);
+  -moz-transform: scale(0.0, 1.0);
+  -ms-transform: scale(0.0, 1.0);
+  -o-transform: scale(0.0, 1.0);
+  transform: scale(0.0,1.0);
+}
+
 .slide-1 .text {
   position: absolute;
   top: 17%;
@@ -237,6 +346,23 @@ body {
 
 .slide-1 .text h1 {width: 70%;}
 .slide-1 .text h2 {width: 60%;}
+
+.slide-1 .text.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: -100%;
+}
+.slide-1 .text.ng-enter-active {
+  left: 3%;
+}
+.slide-1 .text.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: 3%;
+}
+.slide-1 .text.ng-leave-active {
+  left: -100%;
+}
 
 .slide-2 .text {
   position: absolute;
@@ -247,20 +373,283 @@ body {
 .slide-2 .text h1 {width: 60%;}
 .slide-2 .text h2 {width: 55%;}
 
+.slide-2 .text.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  top: 100%;
+}
+.slide-2 .text.ng-enter-active {
+  top: 55%;
+}
+.slide-2 .text.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  top: 55%;
+}
+.slide-2 .text.ng-leave-active {
+  top: 100%;
+}
+
 .slide-3 .text {
   text-align: center;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 20%;
 }
 
 .slide-3 .text h1 {width: 60%;}
 .slide-3 .text h2 {width: 60%;}
 
+.slide-3 .text.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: -100%;
+}
+.slide-3 .text.ng-enter-active {
+  left: 20%;
+}
+.slide-3 .text.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: 20%;
+}
+.slide-3 .text.ng-leave-active {
+  left: -100%;
+}
+
+/* images slide-1 */
+.slide-1 .images .wizard {
+  position: absolute;
+  left: 42%;
+  bottom: 0;
+  resize: both;
+  height: 70%;
+}
+
+.slide-1 .images .wizard.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  bottom: -100%;
+}
+.slide-1 .images .wizard.ng-enter-active {
+  bottom: 0;
+}
+.slide-1 .images .wizard.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  bottom: 0;
+}
+.slide-1 .images .wizard.ng-leave-active {
+  bottom: -100%;
+}
+
+.slide-1 .images .ballon_wizard {
+  position: absolute;
+  right: 60%;
+  bottom: 20%;
+  resize: both;
+  width: 30%;
+  height: 23%;
+}
+
+.slide-1 .images .ballon_wizard.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  transition-delay: 1.5s;
+  width: 0%;
+}
+.slide-1 .images .ballon_wizard.ng-enter-active {
+  width: 30%;
+}
+.slide-1 .images .ballon_wizard.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 30%;
+}
+.slide-1 .images .ballon_wizard.ng-leave-active {
+  width: 0%;
+}
+
+.slide-1 .images .lightning1 {
+  position: absolute;
+  left: 35%;
+  bottom: 62%;
+  resize: both;
+  width: 6%;
+}
+
+.slide-1 .images .lightning1.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  transition-delay: 1.5s;
+  width: 0%;
+  left: 43%;
+  bottom: 62%;
+}
+.slide-1 .images .lightning1.ng-enter-active {
+  width: 6%;
+  left: 35%;
+  bottom: 62%;
+}
+.slide-1 .images .lightning1.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 6%;
+  left: 35%;
+  bottom: 62%;
+}
+.slide-1 .images .lightning1.ng-leave-active {
+  width: 0%;
+  left: 43%;
+  bottom: 62%;
+}
+
+.slide-1 .images .lightning2 {
+  position: absolute;
+  left: 38%;
+  bottom: 68%;
+  resize: both;
+  height: 9%;
+}
+
+.slide-1 .images .lightning2.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  transition-delay: 1.5s;
+  height: 0%;
+  left: 45%;
+  bottom: 62%;
+}
+.slide-1 .images .lightning2.ng-enter-active {
+  height: 9%;
+  left: 38%;
+  bottom: 68%;
+}
+.slide-1 .images .lightning2.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 9%;
+  left: 38%;
+  bottom: 68%;
+}
+.slide-1 .images .lightning2.ng-leave-active {
+  height: 0%;
+  left: 45%;
+  bottom: 62%;
+}
+
+.slide-1 .images .lightning3 {
+  position: absolute;
+  left: 43%;
+  bottom: 70%;
+  resize: both;
+  height: 12%;
+}
+
+.slide-1 .images .lightning3.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  transition-delay: 1.5s;
+  height: 0%;
+  left: 45%;
+  bottom: 66%;
+}
+.slide-1 .images .lightning3.ng-enter-active {
+  height: 12%;
+  left: 43%;
+  bottom: 70%;
+}
+.slide-1 .images .lightning3.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 12%;
+  left: 43%;
+  bottom: 70%;
+}
+.slide-1 .images .lightning3.ng-leave-active {
+  height: 0%;
+  left: 45%;
+  bottom: 66%;
+}
+
+/* images slide-2 */
+.slide-2 .images .knight_set {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  resize: both;
+  height: 80%;
+}
+
+.slide-2 .images .knight_set.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: -100%;
+}
+.slide-2 .images .knight_set.ng-enter-active {
+  left: 0;
+}
+.slide-2 .images .knight_set.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: 0;
+}
+.slide-2 .images .knight_set.ng-leave-active {
+  left: -100%;
+}
+
+.slide-2 .images .ballon_knight {
+  position: absolute;
+  left: 27%;
+  bottom: 62%;
+  resize: both;
+  height: 10%;
+  width: 19%;
+}
+
+.slide-2 .images .ballon_knight.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 0%;
+}
+.slide-2 .images .ballon_knight.ng-enter-active {
+  width: 19%;
+}
+.slide-2 .images .ballon_knight.ng-leave {
+  -webkit-transition: 1s;
+  transition: 1s;
+  width: 20%;
+}
+.slide-2 .images .ballon_knight.ng-leave-active {
+  width: 0%;
+}
+
+/* images slide-3 */
+.slide-3 .images .prize_coin {
+  position: absolute;
+  left: 22%;
+  bottom: 0;
+  resize: both;
+  height: 50%;
+}
+
+.slide-3 .images .prize_coin.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  bottom: -100%;
+}
+
+.slide-3 .images .prize_coin.ng-enter-active {
+  bottom: 0;
+}
+
 /* ranking */
+.clock {
+  position: absolute;
+}
+
 div.ranking {
   position: absolute;
-  width: 34%;
   height: 78%;
   top: 7%;
   right: 0;
