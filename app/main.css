@@ -196,6 +196,19 @@ body {
 	100% {margin-left: -1000px;}
 }
 
+/* pages animation */
+.slide-1 {
+  opacity: 1;
+}
+.slide-1.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+.slide-1.ng-enter-active {
+  opacity: 1;
+}
+
 /* texts */
 .text h1 {
   font-size: 55px;

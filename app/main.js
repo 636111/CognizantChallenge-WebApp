@@ -9,7 +9,9 @@ angular
     $scope.top;
     $scope.arrayRest = [];
     $scope.restSlide = 0;
-    $scope.rest;
+    $scope.rest = 0;
+
+    $scope.slide;
     
     (function getRanking() {
       rankingService.getRanking()
@@ -21,11 +23,14 @@ angular
           }
           getTop();
           updateRestView();
+
+          $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
+
         }, function(error) {
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      //$timeout(getRanking, 10000);
+      $timeout(getRanking, 10000);
     }());
 
     function getTop() {
