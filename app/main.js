@@ -67,7 +67,7 @@ angular
   }])
   .factory('rankingService', ['$http', function($http) {
     
-    var urlBase = "http://cognizantchallenge.herokuapp.com/score",
+    var urlBase = "https://cognizantchallenge.herokuapp.com/score",
         rankingData = {},
         token = "Token: LAv49uXbmOoCUm162SQxHJI3Il0jHCqmmA31I40RZIw==";
 

@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = process.env.PORT || 5000;
+    port = process.env.PORT || 8080;
 
     //Set up cross origin resource
     app.use(function (req, res, next) {
