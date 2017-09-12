@@ -20,7 +20,7 @@ angular
           $scope.ranking = response.data;
           $scope.rankingLength = $scope.ranking.length;
           for (var i=0; i<$scope.ranking.length; i++) {
-            //$scope.ranking[i].score = $scope.ranking[i].score + 'pts';            
+            $scope.ranking[i].score = $scope.ranking[i].score + ' pts';
             $scope.ranking[i].position = getGetOrdinal(i+1);
           }
           getTop();

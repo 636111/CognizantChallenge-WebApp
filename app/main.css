@@ -205,18 +205,22 @@ body {
 
 /* texts */
 .text h1 {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 800;
-  line-height: 48px;
+  line-height: 59px;
   margin-bottom: 0;
+  z-index: 9999;
+  position: relative;
 }
 
 .text h2 {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 800;
-  line-height: 30px;
+  line-height: 35px;
   color: rgb(9,167,240);
   margin-top: 20px;
+  z-index: 9999;
+  position: relative;
 }
 
 .text h2.white {
@@ -224,7 +228,7 @@ body {
 }
 
 .ballon_text {
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 500;
   background-color: white;
   padding: 1.5%;
@@ -244,16 +248,16 @@ body {
   height: 0;
   border: 15px solid;
   border-color: transparent transparent transparent white;
-  top: 50%;
+  top: 30%;
   left: 100%;
   margin-top: -15px;
 }
 
 .slide-1 .ballon_text {
   position: absolute;
-  top: 57%;
-  left: 11%;
-  width: 25%;
+  top: 59%;
+  left: 10%;
+  width: 22%;
   -webkit-transform: scale(1.0, 1.0);
   -moz-transform: scale(1.0, 1.0);
   -ms-transform: scale(1.0, 1.0);
@@ -274,7 +278,7 @@ body {
   transform: scale(0.0,1.0);
 }
 .slide-1 .ballon_text.ng-enter-active {
-  left: 11%;
+  left: 10%;
   
   -webkit-transform: scale(1.0, 1.0);
   -moz-transform: scale(1.0, 1.0);
@@ -285,7 +289,7 @@ body {
 .slide-1 .ballon_text.ng-leave {
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  left: 11%;
+  left: 10%;
   
   -webkit-transform: scale(1.0, 1.0);
   -moz-transform: scale(1.0, 1.0);
@@ -370,7 +374,7 @@ body {
 
 .slide-1 .text {
   position: absolute;
-  top: 17%;
+  top: 13%;
   left: 3%;
 }
 
@@ -456,7 +460,7 @@ body {
 /* images slide-1 */
 .slide-1 .images .wizard {
   position: absolute;
-  left: 42%;
+  left: 39%;
   bottom: 0;
   resize: both;
   height: 70%;
@@ -508,8 +512,8 @@ body {
 
 .slide-1 .images .lightning1 {
   position: absolute;
-  left: 35%;
-  bottom: 62%;
+  left: 31%;
+  bottom: 65%;
   resize: both;
   width: 6%;
 }
@@ -519,31 +523,31 @@ body {
   transition: 1s;
   transition-delay: 1s;
   width: 0%;
-  left: 43%;
+  left: 41%;
   bottom: 62%;
 }
 .slide-1 .images .lightning1.ng-enter-active {
   width: 6%;
-  left: 35%;
-  bottom: 62%;
+  left: 31%;
+  bottom: 65%;
 }
 .slide-1 .images .lightning1.ng-leave {
   -webkit-transition: 1s;
   transition: 1s;
   width: 6%;
-  left: 35%;
-  bottom: 62%;
+  left: 31%;
+  bottom: 65%;
 }
 .slide-1 .images .lightning1.ng-leave-active {
   width: 0%;
-  left: 43%;
+  left: 41%;
   bottom: 62%;
 }
 
 .slide-1 .images .lightning2 {
   position: absolute;
-  left: 38%;
-  bottom: 68%;
+  left: 35%;
+  bottom: 69%;
   resize: both;
   height: 9%;
 }
@@ -553,31 +557,31 @@ body {
   transition: 1s;
   transition-delay: 1s;
   height: 0%;
-  left: 45%;
-  bottom: 62%;
+  left: 42%;
+  bottom: 65%;
 }
 .slide-1 .images .lightning2.ng-enter-active {
   height: 9%;
-  left: 38%;
-  bottom: 68%;
+  left: 35%;
+  bottom: 69%;
 }
 .slide-1 .images .lightning2.ng-leave {
   -webkit-transition: 1s;
   transition: 1s;
   height: 9%;
-  left: 38%;
-  bottom: 68%;
+  left: 35%;
+  bottom: 69%;
 }
 .slide-1 .images .lightning2.ng-leave-active {
   height: 0%;
-  left: 45%;
-  bottom: 62%;
+  left: 42%;
+  bottom: 65%;
 }
 
 .slide-1 .images .lightning3 {
   position: absolute;
-  left: 43%;
-  bottom: 70%;
+  left: 41%;
+  bottom: 71%;
   resize: both;
   height: 12%;
 }
@@ -587,24 +591,24 @@ body {
   transition: 1s;
   transition-delay: 1s;
   height: 0%;
-  left: 45%;
+  left: 42%;
   bottom: 66%;
 }
 .slide-1 .images .lightning3.ng-enter-active {
   height: 12%;
-  left: 43%;
-  bottom: 70%;
+  left: 41%;
+  bottom: 71%;
 }
 .slide-1 .images .lightning3.ng-leave {
   -webkit-transition: 1s;
   transition: 1s;
   height: 12%;
-  left: 43%;
-  bottom: 70%;
+  left: 41%;
+  bottom: 71%;
 }
 .slide-1 .images .lightning3.ng-leave-active {
   height: 0%;
-  left: 45%;
+  left: 42%;
   bottom: 66%;
 }
 
