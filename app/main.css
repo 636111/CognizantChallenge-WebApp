@@ -766,16 +766,14 @@ body {
 }
 
 .ranking .container .contestant {
+  height: 27px;
   margin: 1.5% 5%;
   padding: 1% 2%;
   font-size: 24px;
+  background-color: rgb(38, 182, 235);  
   border-radius: 4px 4px 4px 4px;
   -moz-border-radius: 4px 4px 4px 4px;
   -webkit-border-radius: 4px 4px 4px 4px;
-}
-
-.ranking .container .contestant:not(:empty) {
-  background-color: rgb(38, 182, 235);
 }
 
 .ranking .container .winners .contestant:first-child {
@@ -790,6 +788,10 @@ body {
   background-color: rgb(14, 188, 189);  
 }
 
+.ranking .container .contestant.score {
+  background-color: rgb(0, 168, 231)
+}
+
 .ranking .container .contestant div {
   display: inline-block;
   width: 80%;
@@ -797,7 +799,7 @@ body {
 
 .ranking .container .contestant span:first-child {  
   overflow: hidden;
-  width: 77%;
+  width: 70%;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;

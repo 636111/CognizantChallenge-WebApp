@@ -65,17 +65,17 @@
           <div class="contestant" ng-repeat="contestant in top">
             <div>
               <span>{{ contestant.nick }}</span>
-              <span>{{ contestant.score }}pts</span>
+              <span>{{ contestant.score }}</span>
             </div>
             <span>{{ contestant.position }}</span>
           </div>
         </div>
         <img src="app/images/separator.png" />
         <div class="rest">
-          <div class="contestant" ng-repeat="contestant in rest">
+          <div class="contestant score{{contestant.score}}" ng-repeat="contestant in rest">
             <div>
               <span>{{ contestant.nick }}</span>
-              <span>{{ contestant.score }}pts</span>
+              <span>{{ contestant.score }}</span>
             </div>
             <span>{{ contestant.position }}</span>
           </div>

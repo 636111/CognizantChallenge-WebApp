@@ -18,12 +18,12 @@ angular
         .then(function(response) {
           $scope.ranking = response.data;
           for (var i=0; i<$scope.ranking.length; i++) {
+            $scope.ranking[i].score = $scope.ranking[i].score + 'pts';            
             $scope.ranking[i].position = getGetOrdinal(i+1);
           }
           getTop();
           updateRestView();
-          //$scope.slide = 1;
-          
+
           $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
 
         }, function(error) {
@@ -42,14 +42,13 @@ angular
       var restNum = 0;
       for (var i=0; i<$scope.ranking.slice(top,$scope.ranking.lenght).length; i++) {
         $scope.arrayRest[restNum] = $scope.ranking.slice(top,$scope.ranking.lenght).slice(i,i+size);
-        console.log($scope.arrayRest[restNum].length);
         if ($scope.arrayRest[restNum].length<size) {
-          for (var j=$scope.arrayRest[restNum].length-1; j<size; j++) {
+          for (var j=$scope.arrayRest[restNum].length; j<size; j++) {
             $scope.arrayRest[restNum][j] = {};
           }
         }
         restNum++;
-        i+=size;
+        i+=size-1;
       }
     };
 
