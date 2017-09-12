@@ -6,6 +6,7 @@ angular
     
     $scope.status;
     $scope.ranking;
+    $scope.rankingLength = 0;
     $scope.top;
     $scope.arrayRest = [];
     $scope.restSlide = 0;
@@ -17,30 +18,50 @@ angular
       rankingService.getRanking()
         .then(function(response) {
           $scope.ranking = response.data;
+          $scope.rankingLength = $scope.ranking.length;
           for (var i=0; i<$scope.ranking.length; i++) {
-            $scope.ranking[i].score = $scope.ranking[i].score + 'pts';            
+            //$scope.ranking[i].score = $scope.ranking[i].score + 'pts';            
             $scope.ranking[i].position = getGetOrdinal(i+1);
           }
           getTop();
           updateRestView();
-          $scope.slide = 1;
-          //$scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
+          //$scope.slide = 1;
+          $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
 
         }, function(error) {
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      //$timeout(getRanking, 5000);
+      $timeout(getRanking, 5000);
       //$timeout(getRanking, 10000);
     }());
 
     function getTop() {
       var top = 3;
       $scope.top = $scope.ranking.slice(0,top);
-
+      if ($scope.top.length < top) {
+        if ($scope.top.length < 1) {
+          $scope.top = [];
+          for (var i=0; i<top; i++) {
+            $scope.top[i] = {};
+          }
+        } else {
+          for (var i=$scope.top.length; i<top; i++) {
+            $scope.top[i] = {};
+          }
+        }
+      }
+      
       var size = 10-top;
       var restNum = 0;
+      if ($scope.ranking.slice(top,$scope.ranking.lenght).length < 1) {
+        $scope.arrayRest[0] = [];
+        for (var i=0; i<size; i++) {
+          $scope.arrayRest[0][i] = {};
+        }
+      }
       for (var i=0; i<$scope.ranking.slice(top,$scope.ranking.lenght).length; i++) {
+        
         $scope.arrayRest[restNum] = $scope.ranking.slice(top,$scope.ranking.lenght).slice(i,i+size);
         if ($scope.arrayRest[restNum].length<size) {
           for (var j=$scope.arrayRest[restNum].length; j<size; j++) {
@@ -64,7 +85,7 @@ angular
     };
 
   }])
-  .factory('rankingService', ['$https', function($https) {
+  .factory('rankingService', ['$http', function($http) {
     
     var urlBase = "https://cognizantchallenge.herokuapp.com/score",
         rankingData = {},
@@ -73,7 +94,7 @@ angular
     $http.defaults.headers.common['Authorization'] = token;
 
     rankingData.getRanking = function(){
-      return $https.get(urlBase);
+      return $http.get(urlBase);
     };
 
     return rankingData;

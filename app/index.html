@@ -62,7 +62,7 @@
       <div class="container">
         <p>Ranking</p>
         <div class="winners">
-          <div class="contestant" ng-repeat="contestant in top">
+          <div class="contestant score{{contestant.score}}" ng-repeat="contestant in top">
             <div>
               <span>{{ contestant.nick }}</span>
               <span>{{ contestant.score }}</span>
@@ -70,7 +70,7 @@
             <span>{{ contestant.position }}</span>
           </div>
         </div>
-        <img src="app/images/separator.png" />
+        <img ng-class="{'vis-hidden': rankingLength<=10}" src="app/images/separator.png" />
         <div class="rest">
           <div class="contestant score{{contestant.score}}" ng-repeat="contestant in rest">
             <div>

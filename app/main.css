@@ -125,12 +125,12 @@ html {
   margin-bottom: 2.5%;
 }
 
-div.ranking {
-  width: 34%;
+.ranking {
+  width: 35%;
 }
 
-div.animated-content {
-  width: 66%;
+.animated-content {
+  width: 65%;
 }
 
 /* clouds */
@@ -712,7 +712,7 @@ body {
 /* clock */
 .clock {
   position: absolute;
-  margin-left: -5%;
+  margin-left: -3%;
   margin-top: 1%;
   -webkit-animation: moveclock 2s linear infinite;
 	-moz-animation: moveclock 2s linear infinite;
@@ -740,9 +740,9 @@ body {
 /* ranking */
 .ranking {
   position: absolute;
-  height: 590px;
+  height: 665px;
   right: 0;  
-  top: -6%;
+  top: -10%;
   bottom: 0;
   margin-top: auto;
   margin-bottom: auto;
@@ -751,8 +751,8 @@ body {
 
 .ranking .container {
   padding-bottom: 4%;
-  margin-top: 10%;
-  margin-left: 10%;
+  margin-top: 13%;
+  margin-left: 13%;
   color: white;
   background-color: rgb(0, 168, 231);
 }
@@ -790,7 +790,7 @@ body {
 }
 
 .ranking .container .contestant.score {
-  background-color: rgb(0, 168, 231)
+  background-color: rgb(0, 168, 231)!important;
 }
 
 .ranking .container .contestant div {
@@ -814,6 +814,10 @@ body {
   display: block;
   margin: auto;
   padding: 1%;
+}
+
+.ranking .container img.vis-hidden {
+  visibility: hidden;
 }
 
 .rest .contestant {
