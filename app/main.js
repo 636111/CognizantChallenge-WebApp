@@ -25,7 +25,7 @@ angular
           }
           getTop();
           updateRestView();
-
+          
           $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
 
         }, function(error) {
