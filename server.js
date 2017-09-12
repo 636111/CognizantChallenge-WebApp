@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    port = 8080;
+    port = 3000;
 
     //Set up cross origin resource
     app.use(function (req, res, next) {
