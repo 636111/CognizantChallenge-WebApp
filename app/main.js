@@ -23,14 +23,14 @@ angular
           }
           getTop();
           updateRestView();
-
-          $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
+          $scope.slide = 1;
+          //$scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
 
         }, function(error) {
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      $timeout(getRanking, 5000);
+      //$timeout(getRanking, 5000);
       //$timeout(getRanking, 10000);
     }());
 
@@ -64,7 +64,7 @@ angular
     };
 
   }])
-  .factory('rankingService', ['$http', function($http) {
+  .factory('rankingService', ['$https', function($https) {
     
     var urlBase = "https://cognizantchallenge.herokuapp.com/score",
         rankingData = {},
@@ -73,7 +73,7 @@ angular
     $http.defaults.headers.common['Authorization'] = token;
 
     rankingData.getRanking = function(){
-      return $http.get(urlBase);
+      return $https.get(urlBase);
     };
 
     return rankingData;

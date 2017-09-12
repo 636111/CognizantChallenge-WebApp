@@ -761,15 +761,16 @@ body {
   text-align: right;
   padding: 5%;
   margin-bottom: 3%;
-  font-size: 30px;
+  font-size: 45px;
   font-weight: 800;
 }
 
 .ranking .container .contestant {
-  height: 27px;
+  height: 32px;
   margin: 1.5% 5%;
   padding: 1% 2%;
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 500;
   background-color: rgb(38, 182, 235);  
   border-radius: 4px 4px 4px 4px;
   -moz-border-radius: 4px 4px 4px 4px;
