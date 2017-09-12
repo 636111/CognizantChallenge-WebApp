@@ -23,6 +23,7 @@ angular
             $scope.ranking[i].score = $scope.ranking[i].score + ' pts';
             $scope.ranking[i].position = getGetOrdinal(i+1);
           }
+
           getTop();
           updateRestView();
           
