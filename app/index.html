@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
     <link rel="stylesheet" type="text/css" href="/app/main.css">
   </head>
   <body ng-controller="mainCtrl">
@@ -10,26 +11,26 @@
     <img class="challenge" src="app/images/challengebar.png" />
     <div class="animated-content">
       <div id="clouds">
-        <div class="cloud x1"><img src="app/images/cloud_small.png" /></div>
-        <div class="cloud x2"><img src="app/images/cloud_small.png" /></div>
+        <div class="cloud x1"><img src="app/images/cloud_big.png" /></div>
+        <div class="cloud x2"><img src="app/images/cloud_medium.png" /></div>
         <div class="cloud x3"><img src="app/images/cloud_small.png" /></div>
-        <div class="cloud x4"><img src="app/images/cloud_medium.png" /></div>        
-        <div class="cloud x5"><img src="app/images/cloud_big.png" /></div>
+        <div class="cloud x4"><img src="app/images/cloud_small.png" /></div>
+        <div class="cloud x5"><img src="app/images/cloud_small.png" /></div>
       </div>
       <div class="slide-1">
         <div class="text" ng-if="slide=='1'">
           <h1>Are you an iOS wizard?</h1>
           <h2>TEST YOURSELF AND WIN A PRIZE!</h2>
         </div>
+        <div class="ballon_text" ng-if="slide=='1'">
+          <span>We just need your email.</span> Compete in a knowledge test on iOS development and win a prize!
+        </div>
         <div class="images">
           <img class="lightning1" ng-if="slide=='1'" src="app/images/lightning1.png" />
           <img class="lightning2" ng-if="slide=='1'" src="app/images/lightning2.png" />
           <img class="lightning3" ng-if="slide=='1'" src="app/images/lightning3.png" />
           <img class="wizard" ng-if="slide=='1'" src="app/images/wizard.png" />
-          <img class="ballon_wizard" ng-if="slide=='1'" src="app/images/ballon_wizard.png" />
-        </div>
-        <div class="ballon_text" ng-if="slide=='1'">              
-          <span>We just need your email.</span> Compete in a knowledge test on iOS development and win a prize!
+          <!-- <img class="ballon_wizard" ng-if="slide=='1'" src="app/images/ballon_wizard.png" /> -->
         </div>
       </div>
       <div class="slide-2">
@@ -37,12 +38,12 @@
           <h1>2 minutes is all it takes!</h1>
           <h2 class="white">AND YOU CAN LAND AN AWESOME PRIZE</h2>
         </div>
-        <div class="images">
-          <img class="knight_set" ng-if="slide=='2'" src="app/images/knight_set.png" />
-          <img class="ballon_knight" ng-if="slide=='2'" src="app/images/ballon_knight.png" />
-        </div>
         <div class="ballon_text" ng-if="slide=='2'">              
           I'm an iOS boss!
+        </div>
+        <div class="images">
+          <img class="knight_set" ng-if="slide=='2'" src="app/images/knight_set.png" />
+          <!-- <img class="ballon_knight" ng-if="slide=='2'" src="app/images/ballon_knight.png" /> -->
         </div>
       </div>
       <div class="slide-3">
@@ -52,6 +53,7 @@
         </div>
         <div class="images">
           <img class="prize_coin" ng-if="slide=='3'" src="app/images/prize_coin.png" />
+          <img class="prize_pipe" ng-if="slide=='3'" src="app/images/prize_pipe.png" />
         </div>
       </div>
     </div>
@@ -61,14 +63,20 @@
         <p>Ranking</p>
         <div class="winners">
           <div class="contestant" ng-repeat="contestant in top">
-            <span>{{ contestant.nick }}</span>
+            <div>
+              <span>{{ contestant.nick }}</span>
+              <span>{{ contestant.score }}pts</span>
+            </div>
             <span>{{ contestant.position }}</span>
           </div>
         </div>
         <img src="app/images/separator.png" />
         <div class="rest">
           <div class="contestant" ng-repeat="contestant in rest">
-            <span>{{ contestant.nick }}</span>
+            <div>
+              <span>{{ contestant.nick }}</span>
+              <span>{{ contestant.score }}pts</span>
+            </div>
             <span>{{ contestant.position }}</span>
           </div>
         </div>

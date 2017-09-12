@@ -16,14 +16,14 @@ angular
     (function getRanking() {
       rankingService.getRanking()
         .then(function(response) {
-          //response = testData; //test
           $scope.ranking = response.data;
           for (var i=0; i<$scope.ranking.length; i++) {
             $scope.ranking[i].position = getGetOrdinal(i+1);
           }
           getTop();
           updateRestView();
-
+          //$scope.slide = 1;
+          
           $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
 
         }, function(error) {
@@ -42,6 +42,12 @@ angular
       var restNum = 0;
       for (var i=0; i<$scope.ranking.slice(top,$scope.ranking.lenght).length; i++) {
         $scope.arrayRest[restNum] = $scope.ranking.slice(top,$scope.ranking.lenght).slice(i,i+size);
+        console.log($scope.arrayRest[restNum].length);
+        if ($scope.arrayRest[restNum].length<size) {
+          for (var j=$scope.arrayRest[restNum].length-1; j<size; j++) {
+            $scope.arrayRest[restNum][j] = {};
+          }
+        }
         restNum++;
         i+=size;
       }
@@ -56,150 +62,6 @@ angular
       var s=["th","st","nd","rd"],
           v=n%100;
       return n+(s[(v-20)%10]||s[v]||s[0]);
-    };
-
-    var testData = {
-      data: [
-        {
-          "tryAgain":false,
-          "mail":"juna@gmail.com",
-          "id":2,
-          "score":999,
-          "nick":"Juan"
-        },{
-          "tryAgain":false,
-          "mail":"pawel@gmail.com",
-          "id":1,
-          "score":500,
-          "nick":"pawel"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":200,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"juna@gmail.com",
-          "id":2,
-          "score":100,
-          "nick":"Juan"
-        },{
-          "tryAgain":false,
-          "mail":"pawel@gmail.com",
-          "id":1,
-          "score":90,
-          "nick":"pawel"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":80,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"juna@gmail.com",
-          "id":2,
-          "score":70,
-          "nick":"Juan"
-        },{
-          "tryAgain":false,
-          "mail":"pawel@gmail.com",
-          "id":1,
-          "score":60,
-          "nick":"pawel"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":50,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"juna@gmail.com",
-          "id":2,
-          "score":40,
-          "nick":"Juan"
-        },{
-          "tryAgain":false,
-          "mail":"pawel@gmail.com",
-          "id":1,
-          "score":30,
-          "nick":"pawel"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":20,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":10,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":9,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":8,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":7,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":6,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":5,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":4,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":3,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":2,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":1,
-          "nick":"Vicente"
-        },{
-          "tryAgain":false,
-          "mail":"Vicente@gmail.com",
-          "id":3,
-          "score":1,
-          "nick":"Vicente"
-        }
-      ]
     };
 
   }])
