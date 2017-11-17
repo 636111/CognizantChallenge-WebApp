@@ -79,9 +79,30 @@ angular
     };
 
     function getGetOrdinal(n) {
-      var s=["th","st","nd","rd"],
+      var s=["ro","do","to","mo","vo","no"],
           v=n%100;
-      return n+(s[(v-20)%10]||s[v]||s[0]);
+      
+      //var s=["th","st","nd","rd"],
+      //    v=n%100;
+      //return n+(s[(v-20)%10]||s[v]||s[0]);
+
+      if (n==11 || n==12)
+        return n+s[3];
+      else {
+        if (v==1 || v==3)
+          return n+s[0];
+        else if (v==2)
+          return n+s[1];
+        else if (v==4 || v==5 || v==6)
+          return n+s[2];
+        else if (v==7 || v==0)
+          return n+s[3];
+        else if (v==8)
+          return n+s[4];
+        else if (v==9)
+          return n+s[5];
+      }
+
     };
 
   }])
