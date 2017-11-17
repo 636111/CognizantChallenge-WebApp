@@ -80,8 +80,8 @@ angular
 
     function getGetOrdinal(n) {
       var s=["ro","do","to","mo","vo","no"],
-          v=n%100;
-      
+          v=n%10;
+
       //var s=["th","st","nd","rd"],
       //    v=n%100;
       //return n+(s[(v-20)%10]||s[v]||s[0]);
