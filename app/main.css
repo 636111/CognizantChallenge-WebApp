@@ -379,7 +379,7 @@ body {
 }
 
 .slide-1 .text h1 {width: 70%;}
-.slide-1 .text h2 {width: 60%;}
+.slide-1 .text h2 {width: 50%;}
 
 .slide-1 .text.ng-enter {
   -webkit-transition: 1s;
