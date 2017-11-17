@@ -86,6 +86,7 @@ angular
       //    v=n%100;
       //return n+(s[(v-20)%10]||s[v]||s[0]);
 
+      /*
       if (n==11 || n==12)
         return n+s[3];
       else {
@@ -102,6 +103,9 @@ angular
         else if (v==9)
           return n+s[5];
       }
+      */
+
+      return n+'.º';
 
     };
 
