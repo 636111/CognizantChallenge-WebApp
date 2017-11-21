@@ -213,7 +213,7 @@ body {
   position: relative;
 }
 
-.text h2 {
+.text h2, .text h3 {
   font-size: 35px;
   font-weight: 800;
   line-height: 35px;
@@ -221,6 +221,10 @@ body {
   margin-top: 20px;
   z-index: 9999;
   position: relative;
+}
+
+.text h3 {
+  margin-top: -28px;
 }
 
 .text h2.white {
@@ -323,6 +327,7 @@ body {
   position: absolute;
   top: 29%;
   left: 34%;
+  max-width: 260px;
 
   -webkit-transform: scale(1.0, 1.0);
   -moz-transform: scale(1.0, 1.0);
@@ -378,7 +383,7 @@ body {
   left: 3%;
 }
 
-.slide-1 .text h1 {width: 70%;}
+.slide-1 .text h1 {width: 45%;}
 .slide-1 .text h2 {width: 50%;}
 
 .slide-1 .text.ng-enter {
@@ -433,7 +438,7 @@ body {
   right: 34%;
   margin-left: auto;
   margin-right: auto;
-  width: 33%;
+  width: 50%;
 }
 /*
 .slide-3 .text h1 {width: 60%;}
@@ -804,7 +809,7 @@ body {
 
 .ranking .container .contestant span:first-child {  
   overflow: hidden;
-  width: 70%;
+  width: 55%;
   display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
