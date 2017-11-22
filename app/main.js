@@ -26,14 +26,14 @@ angular
 
           getTop();
           updateRestView();
-            $scope.slide = 1;
-          //$scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
+
+          $scope.slide = $scope.slide + 1 < 4 ? $scope.slide + 1 : 1;
 
         }, function(error) {
           $scope.status = 'Unable to load ranking data: ' + error.message;
         });
       //call the API each 10 seconds
-      //$timeout(getRanking, 10000);
+      $timeout(getRanking, 10000);
     }());
 
     function getTop() {
